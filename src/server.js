@@ -454,8 +454,15 @@ async function makeBanner({title, subtitle, imageUrl, type, channel}) {
   let details = subtitle || "";
   if (type === "football" && channel) details = `${details} • ${channel}`;
 
-  const phoneText = String(brand.phone || "").trim();
-  const phone = phoneText ? `WhatsApp: ${xmlEsc(phoneText)}` : "WhatsApp: não informado";
+ const phoneText = String(
+  brand.phone ||
+  process.env.BRAND_PHONE ||
+  ""
+).trim();
+
+const phone = phoneText
+  ? `WhatsApp: ${xmlEsc(phoneText)}`
+  : "";
   const svg = Buffer.from(`
   <svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg">
     <defs>
