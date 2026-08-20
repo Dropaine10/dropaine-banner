@@ -1601,16 +1601,15 @@ async function makeBanner({
       `${details} • ${channel}`;
   }
 
-  const phoneText =
-    String(
-      brand.phone || ""
-    ).trim();
+ const phoneText = String(
+  brand.phone ||
+  process.env.BRAND_PHONE ||
+  ""
+).trim();
 
-  const phone =
-    phoneText
-      ? `WhatsApp: ${xmlEsc(phoneText)}`
-      : "WhatsApp: não informado";
-
+const phone = phoneText
+  ? `WhatsApp: ${xmlEsc(phoneText)}`
+  : "";
   const svg =
     Buffer.from(`
     <svg
