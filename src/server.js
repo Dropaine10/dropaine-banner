@@ -573,4 +573,4 @@ app.get("/art/:id", auth, (req, res) => {
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`[Dropaine Banner] rodando na porta ${PORT}`);
 });
-<text x="72" y="1188" fill="#ffffff" font-size="32" font-weight="700" font-family="Arial, sans-serif">${xmlEsc(details)} • WhatsApp: (11) 97578-3082</text>
+
